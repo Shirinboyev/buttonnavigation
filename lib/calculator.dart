@@ -70,14 +70,34 @@ class _MyAppState extends State<Calculator> {
             backgroundColor: Colors.brown,
           ),
          drawer: Drawer(
+          backgroundColor: Color.fromARGB(255, 4, 25, 32),
             child: Column(
               children: [
+                const SizedBox(
+                  height: 30,
+                ),
                 TextButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      fixedSize: const Size(300, 50),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(70))),
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Tasbeeh()));
                   },
-                  child: Text("Tasbeeh Page"),
+                  child: Container(
+                  width: 300,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color:  Color.fromARGB(255, 186, 117, 92),
+                    borderRadius: BorderRadius.circular(200)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text("Tasbeeh Page", style: TextStyle(color: Colors.black),),
+                    ],
+                  )),
                 )
               ],
             ),

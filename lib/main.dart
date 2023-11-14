@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tasbeeh/calculator.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: Tasbeeh(),
   ));
@@ -22,14 +22,32 @@ class _MyAppState extends State<Tasbeeh> {
     return SafeArea(
       child: Scaffold(
         drawer: Drawer(
+          backgroundColor: Color.fromARGB(255, 4, 25, 32),
           child: Column(
             children: [
+              const SizedBox(height: 30,),
               TextButton(
+                style: ElevatedButton.styleFrom(
+            backgroundColor: Color.fromARGB(255, 27, 223, 33),
+            fixedSize: const Size(300, 50),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(70))),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Calculator()));
+                      MaterialPageRoute(builder: (context) => const Calculator()));
                 },
-                child: Text("Calculator Page"),
+                child: Container(
+                  width: 300,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 76, 149, 175),
+                    borderRadius: BorderRadius.circular(200)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text("Calculator Page", style: TextStyle(color: Colors.black),),
+                    ],
+                  )),
               )
             ],
           ),
